@@ -1,0 +1,28 @@
+:root {
+    --bg-primary: rgba(245, 245, 245, 1.000);
+    --bg-secondary: rgba(254, 254, 254, 1.000);
+
+    --text-primary: rgba(77, 77, 77, 1.000);
+    --text-secondary: rgba(119, 119, 119, 1.000);
+    --text-terciary: rgba(230, 230, 230, 1.000);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: var(--bg-primary);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
