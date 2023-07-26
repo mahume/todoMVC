@@ -37,7 +37,7 @@
         border-width: 1px;
         border-style: solid;
         border-color: var(--text-terciary);
-        border-radius: .5rem;
+        border-radius: .25rem;
         padding: .5rem;
         list-style: none;
         color: var(--text-secondary);

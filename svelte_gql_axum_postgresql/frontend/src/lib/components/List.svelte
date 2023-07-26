@@ -1,14 +1,15 @@
-<script>
-    import Input from "./Input.svelte";
+<script lang="ts">
+    import Todo from "$lib/components/Todo.svelte";
+
+    export let todos: Array<string> = [];
 </script>
 
 <ul>
-    <li>
-        <Input />
-    </li>
-    <li>
-        <Input />
-    </li>
+    {#each todos as value}
+        <li>
+            <Todo {value} />
+        </li>
+    {/each}
 </ul>
 
 <style>
