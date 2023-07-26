@@ -5,8 +5,11 @@
 <style>
     div {
         width: 100%;
-        padding: 16px 16px 16px 60px;
+        padding: 1rem;
         border: none;
         background: var(--bg-secondary);
+
+        display: flex;
+        align-items: center;
     }
 </style>

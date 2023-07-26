@@ -1,5 +1,9 @@
+<script>
+    export let totalTodos = 0;
+</script>
+
 <div>
-    <p>item left</p>
+    <p>{totalTodos} items left</p>
     <ul>
         <li>All</li>
         <li>Active</li>

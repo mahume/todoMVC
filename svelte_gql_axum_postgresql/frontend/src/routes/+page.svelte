@@ -3,11 +3,12 @@
     import Heading from "$lib/components/Heading.svelte";
     import List from "$lib/components/List.svelte";
     import Controls from "$lib/components/Controls.svelte";
+    import type {Todo} from "$lib/types/types";
 
-    let todos: Array<string> = ['First'];
+    let todos: Array<Todo> = [];
+    $: totalTodos = todos.length;
 
     function handleNewTodo(event: CustomEvent) {
-        console.log(todos)
         todos = [...todos, event.detail];
     }
 </script>
@@ -18,9 +19,9 @@
     </header>
 
     <section>
-        <Input on:addTodo={handleNewTodo} />
-        <List {todos} />
-        <Controls />
+        <Input {totalTodos} on:addTodo={handleNewTodo} />
+        <List todos={todos} />
+        <Controls {totalTodos} />
     </section>
 </main>
 
@@ -41,9 +42,9 @@
     }
 
     section {
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
-
         grid-column: 2;
         grid-row: 2;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+                    0 25px 50px 0 rgba(0, 0, 0, 0.1);
     }
 </style>

@@ -1,15 +1,16 @@
 <script lang="ts">
     import TodoContainer from "$lib/components/TodoContainer.svelte";
+    import Checkmark from "$lib/components/icons/Checkmark.svelte";
+    import Remove from "$lib/components/icons/Remove.svelte";
+    import type {Todo} from "$lib/types/types";
 
-    export let value = '';
+    export let todo: Todo;
 </script>
 
 <TodoContainer>
-    <input
-            type="text"
-            value="{value}"
-            readonly
-    />
+    <Checkmark />
+    <input type="text" value="{todo.text}" readonly />
+    <Remove />
 </TodoContainer>
 
 <style>

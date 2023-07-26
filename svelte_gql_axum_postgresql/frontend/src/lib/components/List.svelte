@@ -1,13 +1,14 @@
 <script lang="ts">
-    import Todo from "$lib/components/Todo.svelte";
+    import TodoItem from "$lib/components/TodoItem.svelte";
+    import type {Todo} from "$lib/types/types";
 
-    export let todos: Array<string> = [];
+    export let todos: Array<Todo> = [];
 </script>
 
 <ul>
-    {#each todos as value}
+    {#each todos as todo}
         <li>
-            <Todo {value} />
+            <TodoItem todo={todo} />
         </li>
     {/each}
 </ul>
