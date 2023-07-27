@@ -2,7 +2,7 @@
     import Input from "$lib/components/Input.svelte";
     import Heading from "$lib/components/Heading.svelte";
     import List from "$lib/components/List.svelte";
-    import Controls from "$lib/components/Controls.svelte";
+    import Controls from "$lib/components/controls/Controls.svelte";
     import type {Todo} from "$lib/types/types";
 
     let todos: Array<Todo> = [];

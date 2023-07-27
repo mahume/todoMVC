@@ -46,7 +46,7 @@
 
         &::placeholder {
             font-style: italic;
-            color: var(--text-terciary);
+            color: var(--text-tertiary);
         }
 
         &:focus {

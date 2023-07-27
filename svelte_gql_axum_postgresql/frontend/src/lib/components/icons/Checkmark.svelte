@@ -1,4 +1,10 @@
-<script>
+<script lang="ts">
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher<{ checked: boolean}>();
+
+    $: dispatch('checked', isChecked);
+
     let isChecked = false;
 </script>
 
@@ -26,7 +32,7 @@
             width: 2rem;
             height: 2rem;
             background-color: var(--bg-secondary);
-            border: 1px solid var(--text-terciary);
+            border: 1px solid var(--text-tertiary);
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
