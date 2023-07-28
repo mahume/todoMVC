@@ -2,23 +2,18 @@
     import NavList from "$lib/components/navigation/NavList.svelte";
     import {todoListStore} from "../../../Store";
 
-    function onClick() {
+    function handleClick() {
+        console.log('clear')
         todoListStore.clearCompleted();
-    }
-    function onKeyUp(e: KeyboardEvent) {
-        if (e.key === "Enter") {
-            todoListStore.clearCompleted();
-        }
     }
 </script>
 
 <div>
     <p class="info">{$todoListStore.length} items left</p>
     <NavList />
-    <div on:click={onClick} on:keyup={onKeyUp}
-         tabindex="0" role="button">
-        <p class="clear">Clear completed</p>
-    </div>
+    <button on:click={handleClick}>
+        <span class="clear">Clear completed</span>
+    </button>
 </div>
 
 <style>
@@ -32,7 +27,7 @@
         padding: 1rem 1.5rem;
     }
 
-    p {
+    span {
         align-items: center;
         color: var(--text-secondary);
         margin: 0;

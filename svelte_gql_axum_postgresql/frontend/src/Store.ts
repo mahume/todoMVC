@@ -26,14 +26,14 @@ function createTodoListStore() {
                 });
             });
         },
-        // toggleAll: () => {
-        //     update((todos) => {
-        //         return todos.map((todo) => {
-        //             return {...todo, completed: !areAllToggled};
-        //         });
-        //     })
-        // },
-        clearCompleted: () => update(todos => todos.filter(todo => todo.completed)),
+        toggleAll: (completed: boolean) => {
+            update((todos) => {
+                return todos.map((todo) => {
+                    return {...todo, completed};
+                });
+            })
+        },
+        clearCompleted: () => update(todos => todos.filter(todo => !todo.completed)),
     };
 }
 

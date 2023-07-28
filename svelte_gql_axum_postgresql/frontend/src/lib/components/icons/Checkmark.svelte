@@ -4,7 +4,7 @@
 
     export let todo: Todo;
 
-    let isChecked = todo.completed;
+    $: isChecked = todo.completed;
 
     $: if (isChecked !== todo.completed) {
         todoListStore.check(todo.id, isChecked);
