@@ -1,4 +1,14 @@
-<div>
+<script lang="ts">
+    import {todoListStore} from "../../../Store.js";
+
+    function handleCompleteAll() {
+        console.log('test')
+        todoListStore.toggleAll();
+    }
+</script>
+
+<div on:click={handleCompleteAll} on:keyup={handleCompleteAll}
+     tabindex="0" role="button">
     <img src="/icons/chevron.svg" alt="chevron icon">
 </div>
 

@@ -3,16 +3,12 @@
     import type {Todo} from "$lib/types/types";
 
     export let todos: Array<Todo> = [];
-
-    function deleteTodo(event: CustomEvent<{ id: number }>) {
-        todos = todos.filter((todo) => todo.id !== event.detail.id);
-    }
 </script>
 
 <ul>
     {#each todos as todo}
         <li>
-            <TodoItem todo={todo} on:delete={deleteTodo}/>
+            <TodoItem todo={todo}/>
         </li>
     {/each}
 </ul>

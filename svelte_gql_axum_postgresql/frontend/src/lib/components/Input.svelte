@@ -1,24 +1,20 @@
 <script lang="ts">
-    import {createEventDispatcher} from "svelte";
     import TodoContainer from "$lib/components/TodoContainer.svelte";
     import Chevron from "$lib/components/icons/Chevron.svelte";
-    import type {Todo} from "$lib/types/types";
+    import {todoListStore} from "../../Store";
 
-    const dispatch = createEventDispatcher<{ addTodo: Todo }>();
-
-    export let newTodo = '';
-    export let totalTodos: number;
+    let newTodo = '';
 
     function addTodo(e: KeyboardEvent) {
         const isCarriageReturnPressed = e.key === 'Enter';
         const hasValue = newTodo.trim();
 
         if (isCarriageReturnPressed && hasValue) {
-            dispatch('addTodo', {
-                id: totalTodos + 1,
+            todoListStore.add({
+                id: $todoListStore.length + 1,
                 text: newTodo.trim(),
                 completed: false,
-            });
+            })
             newTodo = '';
         }
     }

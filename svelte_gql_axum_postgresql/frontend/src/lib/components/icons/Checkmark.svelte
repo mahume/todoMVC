@@ -1,11 +1,14 @@
 <script lang="ts">
-    import { createEventDispatcher } from 'svelte';
+    import {todoListStore} from "../../../Store";
+    import type {Todo} from "$lib/types/types";
 
-    const dispatch = createEventDispatcher<{ checked: boolean}>();
+    export let todo: Todo;
 
-    $: dispatch('checked', isChecked);
+    let isChecked = todo.completed;
 
-    let isChecked = false;
+    $: if (isChecked !== todo.completed) {
+        todoListStore.check(todo.id, isChecked);
+    }
 </script>
 
 <label>

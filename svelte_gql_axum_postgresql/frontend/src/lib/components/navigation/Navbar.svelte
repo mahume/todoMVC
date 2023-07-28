@@ -1,13 +1,24 @@
-<script>
-    import FilterList from "$lib/components/controls/FilterList.svelte";
+<script lang="ts">
+    import NavList from "$lib/components/navigation/NavList.svelte";
+    import {todoListStore} from "../../../Store";
 
-    export let totalTodos = 0;
+    function onClick() {
+        todoListStore.clearCompleted();
+    }
+    function onKeyUp(e: KeyboardEvent) {
+        if (e.key === "Enter") {
+            todoListStore.clearCompleted();
+        }
+    }
 </script>
 
 <div>
-    <p class="info">{totalTodos} items left</p>
-    <FilterList />
-    <p class="clear">Clear completed</p>
+    <p class="info">{$todoListStore.length} items left</p>
+    <NavList />
+    <div on:click={onClick} on:keyup={onKeyUp}
+         tabindex="0" role="button">
+        <p class="clear">Clear completed</p>
+    </div>
 </div>
 
 <style>

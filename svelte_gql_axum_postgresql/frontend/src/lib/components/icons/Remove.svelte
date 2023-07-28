@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { createEventDispatcher } from 'svelte';
+    import {todoListStore} from "../../../Store";
+    import type {Todo} from "$lib/types/types";
 
-    const dispatch = createEventDispatcher<{ delete: true }>();
+    export let todo: Todo;
 
     function handleDelete() {
-        dispatch('delete', true);
+        todoListStore.delete(todo.id)
     }
 </script>
 

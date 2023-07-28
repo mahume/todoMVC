@@ -1,27 +1,17 @@
 <script lang="ts">
-    import { createEventDispatcher } from 'svelte';
     import TodoContainer from "$lib/components/TodoContainer.svelte";
     import Checkmark from "$lib/components/icons/Checkmark.svelte";
     import Remove from "$lib/components/icons/Remove.svelte";
     import type {Todo} from "$lib/types/types";
 
     export let todo: Todo;
-
-    const dispatch = createEventDispatcher<{ delete: { id: number } }>();
-
-    function handleCheck(event: CustomEvent<boolean>) {
-        todo.completed = event.detail;
-    }
-    function handleDelete() {
-        dispatch('delete', { id: todo.id });
-    }
 </script>
 
 <TodoContainer let:hovering={hovering}>
-    <Checkmark on:checked={handleCheck}/>
+    <Checkmark {todo} />
     <p class:completed={todo.completed}>{todo.text}</p>
     {#if hovering}
-        <Remove on:delete={handleDelete}/>
+        <Remove {todo} />
     {/if}
 </TodoContainer>
 

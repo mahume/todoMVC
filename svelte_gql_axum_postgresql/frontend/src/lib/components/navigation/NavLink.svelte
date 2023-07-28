@@ -1,11 +1,15 @@
 <script lang="ts">
-    export let filterItem: {
-        name: string,
-        isActive: boolean
-    };
+    import { page } from '$app/stores';
+
+    export let name: string;
+    export let route: string;
+
+    $: isActive = $page.route.id === route;
 </script>
 
-<li class:active={filterItem.isActive}>{filterItem.name}</li>
+<li class:active={isActive}>
+    <a href={route}>{name}</a>
+</li>
 
 <style>
     li {
@@ -29,5 +33,11 @@
         &.active {
             border-color: var(--border-tertiary);
         }
+    }
+
+    a {
+        padding: 0;
+        color: inherit;
+        text-decoration: none;
     }
 </style>
