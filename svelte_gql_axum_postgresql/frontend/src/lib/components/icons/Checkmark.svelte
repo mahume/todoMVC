@@ -3,18 +3,21 @@
     import type {Todo} from "$lib/types/types";
 
     export let todo: Todo;
+    let isChecked = todo.completed;
 
-    $: isChecked = todo.completed;
+    function handleCheckboxChange() {
+        // 2. Update todo.completed when checkbox is clicked
+        todo.completed = isChecked;
 
-    $: if (isChecked !== todo.completed) {
-        todoListStore.check(todo.id, isChecked);
+        // Optionally: If you want to update the global store as well
+        todoListStore.check(todo.id, isChecked); // Assuming check() is a method that updates the todo in the store
     }
 </script>
 
 <label>
-    <input bind:checked={isChecked} type="checkbox">
+    <input bind:checked={isChecked} on:change={handleCheckboxChange} type="checkbox">
     <span>
-        {#if isChecked}
+        {#if todo.completed}
             <img src="/icons/check.svg" alt="checkmark icon">
         {/if}
     </span>

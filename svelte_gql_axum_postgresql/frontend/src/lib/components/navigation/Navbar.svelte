@@ -27,6 +27,11 @@
         padding: 1rem 1.5rem;
     }
 
+    button {
+        border: none;
+        background-color: transparent;
+    }
+
     span {
         align-items: center;
         color: var(--text-secondary);

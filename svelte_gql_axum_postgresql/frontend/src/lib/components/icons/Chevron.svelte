@@ -21,6 +21,8 @@
         align-items: center;
         justify-content: center;
         margin-right: 1rem;
+        border: none;
+        background: transparent;
 
         &:hover {
             cursor: pointer;
