@@ -12,7 +12,7 @@
 
 <div on:mouseenter={enableHover} on:mouseleave={disableHover}
      on:focus={enableHover} on:blur={disableHover}
-     tabindex="0" role="button">
+     tabindex="-1" role="button">
     <slot {hovering}/>
 </div>
 

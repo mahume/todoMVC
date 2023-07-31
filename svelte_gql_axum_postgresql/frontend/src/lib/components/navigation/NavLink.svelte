@@ -17,7 +17,6 @@
         border-style: solid;
         border-color: var(--bg-secondary);
         border-radius: .25rem;
-        padding: .5rem .75rem;
         list-style: none;
         color: var(--text-secondary);
 
@@ -36,7 +35,9 @@
     }
 
     a {
-        padding: 0;
+        display: block;
+        height: 100%;
+        padding: .5rem .75rem;
         color: inherit;
         text-decoration: none;
     }

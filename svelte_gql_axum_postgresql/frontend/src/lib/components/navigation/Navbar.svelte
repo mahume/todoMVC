@@ -1,54 +1,23 @@
 <script lang="ts">
     import NavList from "$lib/components/navigation/NavList.svelte";
-    import {todoListStore} from "../../../Store";
-
-    function handleClick() {
-        console.log('clear')
-        todoListStore.clearCompleted();
-    }
+    import TodoCount from "$lib/components/navigation/TodoCount.svelte";
+    import TodoClear from "$lib/components/navigation/TodoClear.svelte";
 </script>
 
-<div>
-    <p class="info">{$todoListStore.length} items left</p>
-    <NavList />
-    <button on:click={handleClick}>
-        <span class="clear">Clear completed</span>
-    </button>
+<div class="navbar">
+    <TodoCount/>
+    <NavList/>
+    <TodoClear/>
 </div>
 
 <style>
-    div {
+    .navbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         font-weight: 300;
 
         background-color: var(--bg-secondary);
-        padding: 1rem 1.5rem;
+        padding: .1rem 1.2rem;
     }
-
-    button {
-        border: none;
-        background-color: transparent;
-    }
-
-    span {
-        align-items: center;
-        color: var(--text-secondary);
-        margin: 0;
-
-        &.info {
-            justify-self: flex-start;
-        }
-
-        &.clear {
-            justify-self: flex-end;
-
-            &:hover {
-                cursor: pointer;
-                text-decoration: underline;
-            }
-        }
-    }
-
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import TodoItem from "$lib/components/TodoItem.svelte";
+    import TodoItem from "$lib/components/todos/TodoItem.svelte";
     import type {Todo} from "$lib/types/types";
 
     export let todos: Array<Todo> = [];

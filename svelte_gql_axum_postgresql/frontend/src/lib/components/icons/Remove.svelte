@@ -5,6 +5,7 @@
     export let todo: Todo;
 
     function handleDelete() {
+        console.log('Clicked')
         todoListStore.delete(todo.id)
     }
 </script>

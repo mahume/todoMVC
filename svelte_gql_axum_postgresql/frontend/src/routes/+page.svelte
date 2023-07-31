@@ -1,6 +1,6 @@
 <script lang="ts">
-    import List from "$lib/components/List.svelte";
+    import TodoList from "$lib/components/todos/TodoList.svelte";
     import {todoListStore} from "../Store";
 </script>
 
-<List todos={$todoListStore} />
+<TodoList todos={$todoListStore} />
