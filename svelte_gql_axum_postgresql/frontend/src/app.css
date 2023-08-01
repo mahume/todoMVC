@@ -1,6 +1,7 @@
 :root {
     --bg-primary: rgba(245, 245, 245, 1.000);
     --bg-secondary: rgba(254, 254, 254, 1.000);
+    --bg-tertiary: rgba(115, 115, 115, 1.000);
 
     --text-primary: rgba(77, 77, 77, 1.000);
     --text-secondary: rgba(119, 119, 119, 1.000);

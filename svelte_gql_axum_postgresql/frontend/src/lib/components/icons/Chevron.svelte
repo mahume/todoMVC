@@ -1,17 +1,20 @@
+<button on:click={handleClick}>
+    <Chevron isFocused={allCompleted} />
+</button>
+
 <script lang="ts">
     import {todoListStore} from "../../../Store.js";
+    import Chevron from "$lib/components/svgs/Chevron.svelte";
 
-    let completed = false;
+    $: allCompleted = $todoListStore.every(todo => todo.completed)
+        && $todoListStore.length > 0;
 
-    function handleCompleteAll() {
-        todoListStore.toggleAll(!completed);
-        completed = !completed;
+    function handleClick() {
+        allCompleted
+            ? todoListStore.toggleAll(false)
+            : todoListStore.toggleAll(true);
     }
 </script>
-
-<button on:click={handleCompleteAll}>
-    <img src="/icons/chevron.svg" alt="chevron icon">
-</button>
 
 <style>
     button {
@@ -27,10 +30,5 @@
         &:hover {
             cursor: pointer;
         }
-    }
-
-    img {
-        width: 1.25rem;
-        height: 1.25rem;
     }
 </style>
