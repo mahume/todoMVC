@@ -10,8 +10,8 @@
 
 <script lang="ts">
     import TodoContainer from "$lib/components/TodoContainer.svelte";
-    import Chevron from "$lib/components/icons/Chevron.svelte";
-    import {todoListStore} from "../../Store";
+    import Chevron from "$lib/components/input/Chevron.svelte";
+    import {todoListStore} from "../../../Store";
 
     let newTodo = '';
 

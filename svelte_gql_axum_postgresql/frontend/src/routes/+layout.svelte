@@ -14,7 +14,7 @@
     // import '../reset.css';
     import '../app.css';
     import Heading from "$lib/components/Heading.svelte";
-    import Input from "$lib/components/Input.svelte";
+    import Input from "$lib/components/input/Input.svelte";
     import Navbar from "$lib/components/navigation/Navbar.svelte";
 </script>
 
