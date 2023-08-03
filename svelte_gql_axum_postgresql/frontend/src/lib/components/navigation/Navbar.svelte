@@ -1,14 +1,14 @@
-<script lang="ts">
-    import NavList from "$lib/components/navigation/NavList.svelte";
-    import TodoCount from "$lib/components/navigation/TodoCount.svelte";
-    import TodoClear from "$lib/components/navigation/TodoClear.svelte";
-</script>
-
 <div class="navbar">
     <TodoCount/>
     <NavList/>
     <TodoClear/>
 </div>
+
+<script lang="ts">
+    import NavList from "$lib/components/navigation/NavList.svelte";
+    import TodoCount from "$lib/components/navigation/TodoCount.svelte";
+    import TodoClear from "$lib/components/navigation/TodoClear.svelte";
+</script>
 
 <style>
     .navbar {

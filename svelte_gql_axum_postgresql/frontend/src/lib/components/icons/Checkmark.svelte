@@ -17,11 +17,9 @@
 
     function handleCheckboxChange(event: Event) {
         console.log('Clicked check', event)
-        // 2. Update todo.completed when checkbox is clicked
         todo.completed = isChecked;
 
-        // Optionally: If you want to update the global store as well
-        todoListStore.check(todo.id, isChecked); // Assuming check() is a method that updates the todo in the store
+        todoListStore.check(todo.id, isChecked);
     }
 </script>
 

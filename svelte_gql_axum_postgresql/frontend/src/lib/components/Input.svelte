@@ -1,3 +1,13 @@
+<TodoContainer>
+    <Chevron />
+    <input
+            bind:value="{newTodo}"
+            on:keydown="{addTodo}"
+            placeholder="What needs to be done?"
+            type="text"
+    />
+</TodoContainer>
+
 <script lang="ts">
     import TodoContainer from "$lib/components/TodoContainer.svelte";
     import Chevron from "$lib/components/icons/Chevron.svelte";
@@ -19,16 +29,6 @@
         }
     }
 </script>
-
-<TodoContainer>
-    <Chevron />
-    <input
-            bind:value="{newTodo}"
-            on:keydown="{addTodo}"
-            placeholder="What needs to be done?"
-            type="text"
-    />
-</TodoContainer>
 
 <style>
     input {

@@ -1,3 +1,9 @@
+<TodoContainer let:hovering={hovering}>
+    <Checkmark {todo}/>
+    <TodoText {todo}/>
+    <Remove {todo} {hovering}/>
+</TodoContainer>
+
 <script lang="ts">
     import TodoContainer from "$lib/components/TodoContainer.svelte";
     import Checkmark from "$lib/components/icons/Checkmark.svelte";
@@ -9,9 +15,3 @@
     export let todo: Todo;
     $: console.log($todoListStore)
 </script>
-
-<TodoContainer let:hovering={hovering}>
-    <Checkmark {todo}/>
-    <TodoText {todo}/>
-    <Remove {todo} {hovering}/>
-</TodoContainer>

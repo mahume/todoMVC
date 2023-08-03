@@ -1,3 +1,9 @@
+<div on:mouseenter={enableHover} on:mouseleave={disableHover}
+     on:focus={enableHover} on:blur={disableHover}
+     tabindex="-1" role="button">
+    <slot {hovering}/>
+</div>
+
 <script lang="ts">
     let hovering = false;
 
@@ -9,12 +15,6 @@
         hovering = false;
     }
 </script>
-
-<div on:mouseenter={enableHover} on:mouseleave={disableHover}
-     on:focus={enableHover} on:blur={disableHover}
-     tabindex="-1" role="button">
-    <slot {hovering}/>
-</div>
 
 <style>
     div {

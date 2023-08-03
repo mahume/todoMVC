@@ -1,8 +1,8 @@
+<p class="info">{$todoListStore.length} items left</p>
+
 <script>
     import {todoListStore} from "../../../Store";
 </script>
-
-<p class="info">{$todoListStore.length} items left</p>
 
 <style>
     .info {

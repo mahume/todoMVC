@@ -1,11 +1,3 @@
-<script lang="ts">
-    // import '../reset.css';
-    import '../app.css';
-    import Heading from "$lib/components/Heading.svelte";
-    import Input from "$lib/components/Input.svelte";
-    import Navbar from "$lib/components/navigation/Navbar.svelte";
-</script>
-
 <main class="grid">
     <header>
         <Heading />
@@ -17,6 +9,14 @@
         <Navbar />
     </section>
 </main>
+
+<script lang="ts">
+    // import '../reset.css';
+    import '../app.css';
+    import Heading from "$lib/components/Heading.svelte";
+    import Input from "$lib/components/Input.svelte";
+    import Navbar from "$lib/components/navigation/Navbar.svelte";
+</script>
 
 <style>
     .grid {

@@ -1,10 +1,10 @@
+<p class:completed={todo.completed}>{todo.text}</p>
+
 <script lang="ts">
     import type {Todo} from "$lib/types/types";
 
     export let todo: Todo;
 </script>
-
-<p class:completed={todo.completed}>{todo.text}</p>
 
 <style>
     p {

@@ -1,3 +1,7 @@
+<li class:active={isActive}>
+    <a href={route}>{name}</a>
+</li>
+
 <script lang="ts">
     import { page } from '$app/stores';
 
@@ -6,10 +10,6 @@
 
     $: isActive = $page.route.id === route;
 </script>
-
-<li class:active={isActive}>
-    <a href={route}>{name}</a>
-</li>
 
 <style>
     li {

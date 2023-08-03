@@ -1,3 +1,7 @@
+<button on:click={handleClick} class:hidden={!hasCompleted}>
+    <span class="clear">Clear completed</span>
+</button>
+
 <script lang="ts">
     import {todoListStore} from "../../../Store";
 
@@ -7,10 +11,6 @@
         todoListStore.clearCompleted();
     }
 </script>
-
-<button on:click={handleClick} class:hidden={!hasCompleted}>
-    <span class="clear">Clear completed</span>
-</button>
 
 <style>
     button {
