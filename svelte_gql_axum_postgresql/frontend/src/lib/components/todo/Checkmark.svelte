@@ -1,8 +1,8 @@
 <label>
-    <input bind:checked={isChecked} on:change={handleCheckboxChange} type="checkbox">
+    <input bind:checked={todo.completed} on:change={handleCheckboxChange} type="checkbox">
     <span>
         {#if todo.completed}
-            <Check />
+            <Check/>
         {/if}
     </span>
 </label>
@@ -13,11 +13,10 @@
     import type {Todo} from "$lib/types/types";
 
     export let todo: Todo;
-    let isChecked = todo.completed;
 
-    function handleCheckboxChange(event: Event) {
-        todo.completed = isChecked;
+    $: isChecked = todo.completed;
 
+    function handleCheckboxChange() {
         todoListStore.check(todo.id, isChecked);
     }
 </script>

@@ -1,6 +1,6 @@
 <p class="info">{$todoListStore.length} items left</p>
 
-<script>
+<script lang="ts">
     import {todoListStore} from "../../../Store";
 </script>
 
