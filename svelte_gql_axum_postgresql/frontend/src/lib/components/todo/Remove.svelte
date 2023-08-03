@@ -10,10 +10,7 @@
     export let hovering: boolean;
 
     function handleDelete(event: Event) {
-        console.log($todoListStore)
-        console.log('Clicked X', event)
         todoListStore.delete(todo.id)
-        console.log($todoListStore)
     }
 </script>
 

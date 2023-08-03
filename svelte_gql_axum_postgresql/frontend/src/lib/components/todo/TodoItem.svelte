@@ -10,8 +10,6 @@
     import Remove from "$lib/components/todo/Remove.svelte";
     import TodoText from "$lib/components/todo/TodoText.svelte";
     import type {Todo} from "$lib/types/types";
-    import {todoListStore} from "../../../Store";
 
     export let todo: Todo;
-    $: console.log($todoListStore)
 </script>

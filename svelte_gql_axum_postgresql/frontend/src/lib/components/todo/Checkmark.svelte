@@ -16,7 +16,6 @@
     let isChecked = todo.completed;
 
     function handleCheckboxChange(event: Event) {
-        console.log('Clicked check', event)
         todo.completed = isChecked;
 
         todoListStore.check(todo.id, isChecked);
