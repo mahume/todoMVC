@@ -21,7 +21,7 @@
     }
 </script>
 
-<style>
+<style lang="scss">
     label {
         position: relative;
         display: inline-block;
